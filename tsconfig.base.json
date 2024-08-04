@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nxit/orders": ["libs/orders/src/index.ts"],
       "@nxit/products": ["libs/products/src/index.ts"],
       "@nxit/ui": ["libs/ui/src/index.ts"],
       "@nxit/users": ["libs/users/src/index.ts"]
