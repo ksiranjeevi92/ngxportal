@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService, Category } from '@nxit/products';
 import { TableModule } from 'primeng/table';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-categories-list',
+  selector: 'admin-categories-list',
   standalone: true,
   imports: [TableModule],
   templateUrl: './categories-list.component.html',
@@ -14,8 +14,11 @@ export class CategoriesListComponent implements OnInit {
   constructor(private categoryService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.categoryService.getCategories().subscribe((res) => {
-      this.categories = [...res];
-    });
+    this.categoryService
+      .getCategories()
+      .pipe(takeUntilDestroyed())
+      .subscribe((res) => {
+        this.categories = [...res];
+      });
   }
 }

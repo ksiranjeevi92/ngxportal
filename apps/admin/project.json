@@ -2,7 +2,7 @@
   "name": "admin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "admin",
   "sourceRoot": "apps/admin/src",
   "tags": [],
   "targets": {
@@ -27,6 +27,13 @@
       },
       "configurations": {
         "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "extractCss": true,
+          "namedChunks": false,
+          "aot": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
           "budgets": [
             {
               "type": "initial",
