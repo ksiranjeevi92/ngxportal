@@ -5,7 +5,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 @Component({
   standalone: true,
   imports: [RouterModule, SidebarComponent],
-  selector: 'app-root',
+  selector: 'admin-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
