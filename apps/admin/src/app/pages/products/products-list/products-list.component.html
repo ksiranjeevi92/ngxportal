@@ -1,0 +1,70 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card header="Products" subheader="List of all Products..">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left">
+            <p-button
+              styleClass="p-button-success"
+              label="New"
+              icon="pi pi-plus"
+              routerLink="form"
+            >
+            </p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-table
+          [value]="products"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          styleClass="p-datatable-gridlines"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSoretedColumn="name">
+                Name<p-sortIcon field="name"></p-sortIcon>
+              </th>
+              <th pSortableColumn="image">
+                <p-sortIcon field="image"></p-sortIcon>Image
+              </th>
+              <th pSortableColumn="stock">
+                <p-sortIcon field="stock"></p-sortIcon>Stock
+              </th>
+              <th pSortableColumn="category">
+                <p-sortIcon field="category"></p-sortIcon>Category
+              </th>
+              <th pSortableColumn="created">
+                <p-sortIcon field="created"></p-sortIcon>Created_At
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.image }}</td>
+              <td>{{ product.stock }}</td>
+              <td>{{ product.category }}</td>
+              <td>{{ product.dateCreated }}</td>
+              <td>
+                <p-button
+                  styleClass="p-button-danger mr-2"
+                  icon="pi pi-trash"
+                  (click)="deleteProduct(product.id)"
+                ></p-button>
+                <p-button
+                  styleClass="p-button-success"
+                  icon="pi pi-pencil"
+                  (click)="editProduct(product.id)"
+                ></p-button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-card>
+</div>

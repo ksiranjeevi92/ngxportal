@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'admin-dashboard',
+  selector: 'lib-shared',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './dashboard.component.html',
+  templateUrl: './shared.component.html',
 })
-export class DashboardComponent {}
+export class SharedComponent {}
